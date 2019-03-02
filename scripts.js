@@ -47,6 +47,14 @@ function resetBoard() {
     [firstCard, secondCard] = [null, null];
 }
 
+(function shuffle() {
+    cards.forEach(card => {
+        let randomPos = (Math.random() * 12 | 0);
+        card.style.order = randomPos;
+    });
+})();
+// Immediately Invoked Function Expression
+
 function checkForMatch() {
     let isMatch = firstCard.dataset.framework ===
         secondCard.dataset.framework;
